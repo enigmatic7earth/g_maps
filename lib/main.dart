@@ -13,7 +13,14 @@ class _MyAppState extends State<MyApp> {
   Completer<GoogleMapController> _controller = Completer();
 
   static const LatLng _center = const LatLng(19.0760, 72.8777);
+  // Code added
+  // Adding mapType
   MapType _currentMapType = MapType.normal;
+  // Marker
+  final Set<Marker> _markers = {};
+
+  // Tracking current location
+  LatLng _lastMapPosition = _center;
 
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
@@ -32,23 +39,36 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             GoogleMap(
               onMapCreated: _onMapCreated,
-              mapType: _currentMapType,
+              mapType: _currentMapType, // Map type
+              markers: _markers, // markers
+              onCameraMove: _onCameraMove, // Moves camera
               initialCameraPosition: CameraPosition(
                 target: _center,
                 zoom: 11.0,
               ),
             ),
 		    Padding(
-		      padding: const EdgeInsets.all(16.0),
+		      padding: const EdgeInsets.all(10.0),
 		      child: Align(
 		        alignment: Alignment.topRight,
-		        child: FloatingActionButton(
-		          onPressed: _onMapTypeButtonPressed,
-		          materialTapTargetSize: MaterialTapTargetSize.padded,
-		          backgroundColor: Colors.cyan,
-		          child: const Icon(Icons.map, size: 36.0),
-		        ),
-		      ),
+		        child: Column(
+		          children: <Widget>[
+		            FloatingActionButton(
+		              onPressed: _onMapTypeButtonPressed,
+		              materialTapTargetSize: MaterialTapTargetSize.padded,
+		              backgroundColor: Colors.cyan,
+		              child: const Icon(Icons.map, size: 36.0),
+		            ),
+		            SizedBox(height: 16.0),
+                    FloatingActionButton(
+                      onPressed: _onAddMarkerButtonPressed,
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                      backgroundColor: Colors.cyan,
+                      child: const Icon(Icons.add_location, size: 36.0),
+                    ),
+		          ], 
+		         ),
+		       ),
 		    ),
 		  ],
 		),
@@ -56,13 +76,32 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-void _onMapTypeButtonPressed() {
-  setState(() {
-    _currentMapType = _currentMapType == MapType.normal
-        ? MapType.satellite
-        : MapType.normal;
-    print(_currentMapType);
-  });
-}
+	void _onCameraMove(CameraPosition position) {
+	  _lastMapPosition = position.target;
+	}
+
+
+	void _onMapTypeButtonPressed() {
+	  setState(() {
+	    _currentMapType = _currentMapType == MapType.normal
+	        ? MapType.satellite
+	        : MapType.normal;
+	    print(_currentMapType);
+	  });
+	}
+	void _onAddMarkerButtonPressed() {
+	  setState(() {
+	    _markers.add(Marker(
+	      // This marker id can be anything that uniquely identifies each marker.
+	      markerId: MarkerId(_lastMapPosition.toString()),
+	      position: _lastMapPosition,
+	      infoWindow: InfoWindow(
+	        title: 'Really cool place',
+	        snippet: '5 Star Rating',
+	      ),
+	      icon: BitmapDescriptor.defaultMarker,
+	    ));
+	  });
+	}
 
 }
