@@ -42,6 +42,7 @@ class _MyAppState extends State<MyApp> {
               mapType: _currentMapType, // Map type
               markers: _markers, // markers
               onCameraMove: _onCameraMove, // Moves camera
+              myLocationEnabled: true,
               initialCameraPosition: CameraPosition(
                 target: _center,
                 zoom: 11.0,
@@ -65,6 +66,13 @@ class _MyAppState extends State<MyApp> {
                       materialTapTargetSize: MaterialTapTargetSize.padded,
                       backgroundColor: Colors.cyan,
                       child: const Icon(Icons.add_location, size: 36.0),
+                    ),
+                    SizedBox(height: 16.0),
+                    FloatingActionButton(
+                      onPressed: _onAddMarkerButtonPressed,
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                      backgroundColor: Colors.cyan,
+                      child: const Icon(Icons.flight, size: 36.0),
                     ),
 		          ], 
 		         ),
