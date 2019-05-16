@@ -42,7 +42,10 @@ class _MyAppState extends State<MyApp> {
               mapType: _currentMapType, // Map type
               markers: _markers, // markers
               onCameraMove: _onCameraMove, // Moves camera
-              myLocationEnabled: true,
+              myLocationEnabled: true, // shows user location
+              rotateGesturesEnabled: true,
+              scrollGesturesEnabled: true,
+              tiltGesturesEnabled: true,
               initialCameraPosition: CameraPosition(
                 target: _center,
                 zoom: 11.0,
