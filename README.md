@@ -7,6 +7,11 @@ A basic app would look like:
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*fEcIp4V3mkrATwJl7qhSJg.png "Google Maps with Flutter")
 
+### Features
+Adding a button to switch between normal and satellite view
+
+![alt text](https://cdn-images-1.medium.com/max/800/1*2L9hKzQdpz2YfSfkKQ5fYg.gif "Switching map views")
+
 ---
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png "Google Flutter")
 ## Getting started with Flutter?
