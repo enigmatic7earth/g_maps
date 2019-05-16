@@ -1,7 +1,9 @@
 # ![alt text](https://github.com/enigmatic7earth/g_maps/blob/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-72.png "Google Maps with Flutter") g_maps
 
 A sample Flutter app with Google Maps.
-This example follows [Kenzie Schmoll](https://medium.com/@kenzieschmoll)'s [article](https://medium.com/flutter-io/google-maps-and-flutter-cfb330f9a245) on medium.com
+This example follows [Kenzie Schmoll](https://medium.com/@kenzieschmoll)'s article: [Adding Google Maps to Flutter](https://medium.com/flutter-io/google-maps-and-flutter-cfb330f9a245) on medium.com.
+
+Additional reference: [Exploring Google Maps in Flutter](https://medium.com/flutter-community/exploring-google-maps-in-flutter-8a86d3783d24) by [Deven Joshi](https://medium.com/@dev.n) 
 
 A basic app would look like:
 
