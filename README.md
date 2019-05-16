@@ -8,9 +8,23 @@ A basic app would look like:
 ![alt text](https://cdn-images-1.medium.com/max/800/1*fEcIp4V3mkrATwJl7qhSJg.png "Google Maps with Flutter")
 
 ### Features
-Adding a button to switch between normal and satellite view
+1.Switch between different types of map views
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*2L9hKzQdpz2YfSfkKQ5fYg.gif "Switching map views")
+
+2.Add Marker
+
+![alt text](https://cdn-images-1.medium.com/max/800/1*b_SmpOTvtt2G6HWwQpQFdQ.png "Adding a marker to Google Maps")
+
+
+
+
+#### More ...
+Once again, the GoogleMap widget is just a widget. This means you can place widgets on top of it, you can place it inside other widgets (like a ListView, for example), or if you’re feeling a bit wild, you could even place it in a Transform widget.
+
+![alt text](https://cdn-images-1.medium.com/max/800/1*Z72fYzGsnj_UVNQZx9o-2A.gif "More with Google Maps")
+
+
 
 ---
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png "Google Flutter")
