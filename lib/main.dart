@@ -67,13 +67,7 @@ class _MyAppState extends State<MyApp> {
                       backgroundColor: Colors.cyan,
                       child: const Icon(Icons.add_location, size: 36.0),
                     ),
-                    SizedBox(height: 16.0),
-                    FloatingActionButton(
-                      onPressed: _onAddMarkerButtonPressed,
-                      materialTapTargetSize: MaterialTapTargetSize.padded,
-                      backgroundColor: Colors.cyan,
-                      child: const Icon(Icons.flight, size: 36.0),
-                    ),
+                    
 		          ], 
 		         ),
 		       ),
