@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                     SizedBox(height: 16.0),
                     FloatingActionButton(
-                      onPressed:() => print('Googleplex'),
+                      onPressed: _gotoGoogleHQ,
                       materialTapTargetSize: MaterialTapTargetSize.padded,
                       backgroundColor: Colors.cyan,
                       child: const Icon(Icons.flight, size: 36.0),
@@ -89,6 +89,30 @@ class _MyAppState extends State<MyApp> {
 
 	void _onCameraMove(CameraPosition position) {
 	  _lastMapPosition = position.target;
+	}
+
+	void _gotoGoogleHQ(){
+
+
+	  // Mark Googleplex
+	  LatLng _googleHQ = LatLng(37.4219999, -122.0862462);
+	  
+	  setState(() {
+	    _markers.add(Marker(
+	      // This marker id can be anything that uniquely identifies each marker.
+	      markerId: MarkerId(_lastMapPosition.toString()),
+	      position: _googleHQ,
+	      infoWindow: InfoWindow(
+	        title: 'Googleplex',
+	        snippet: 'Google HQ',
+	      ),
+	      icon: BitmapDescriptor.fromAsset('assets/images/g_placeholder.png',),
+	    ));
+	  });
+
+
+
+
 	}
 
 
