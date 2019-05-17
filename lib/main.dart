@@ -92,11 +92,10 @@ class _MyAppState extends State<MyApp> {
 	}
 
 	void _gotoGoogleHQ(){
-
-
-	  // Mark Googleplex
+	  // Googleplex
 	  LatLng _googleHQ = LatLng(37.4219999, -122.0862462);
 	  
+	  // Mark it
 	  setState(() {
 	    _markers.add(Marker(
 	      // This marker id can be anything that uniquely identifies each marker.
