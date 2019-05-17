@@ -17,7 +17,8 @@ A basic app would look like:
 ![alt text](https://cdn-images-1.medium.com/max/800/1*b_SmpOTvtt2G6HWwQpQFdQ.png "Adding a marker to Google Maps")
 
 3. User Location
-![alt text]()
+
+![alt text](https://github.com/enigmatic7earth/g_maps/blob/master/User%20Location.png "User location")
 
 
 #### More ...
