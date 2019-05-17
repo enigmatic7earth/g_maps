@@ -91,9 +91,15 @@ class _MyAppState extends State<MyApp> {
 	  _lastMapPosition = position.target;
 	}
 
-	void _gotoGoogleHQ(){
+	Future <void> _gotoGoogleHQ() async{
 	  // Googleplex
 	  LatLng _googleHQ = LatLng(37.4219999, -122.0862462);
+	  CameraPosition _camGHq = CameraPosition(
+      target: _googleHQ,);
+
+	  //Fly camera there
+	  final GoogleMapController controller = await _controller.future;
+	  controller.animateCamera(CameraUpdate.newCameraPosition(_camGHq));
 	  
 	  // Mark it
 	  setState(() {
