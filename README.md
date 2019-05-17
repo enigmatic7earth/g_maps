@@ -16,13 +16,19 @@ A basic app would look like:
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*b_SmpOTvtt2G6HWwQpQFdQ.png "Adding a marker to Google Maps")
 
-
+3. User Location
+![alt text]()
 
 
 #### More ...
 Once again, the GoogleMap widget is just a widget. This means you can place widgets on top of it, you can place it inside other widgets (like a ListView, for example), or if you’re feeling a bit wild, you could even place it in a Transform widget.
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*Z72fYzGsnj_UVNQZx9o-2A.gif "More with Google Maps")
+
+### Result
+The demo of the app is as follows:
+
+![alt text](https://github.com/enigmatic7earth/g_maps/blob/master/Flutter-GoogleMaps.gif "Demo")
 
 
 
