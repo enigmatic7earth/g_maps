@@ -12,6 +12,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Completer<GoogleMapController> _controller = Completer();
 
+  // Googleplex
+  static LatLng _googleHQ = LatLng(37.4219999, -122.0862462);
+  static final CameraPosition _camGHq = CameraPosition(
+    target: _googleHQ,
+    zoom: 11,);
+
+  // Mumbai-Home
+  static LatLng _mumbai = LatLng(19.0760,72.8777);
+  static final CameraPosition _camMum = CameraPosition(
+    target: _mumbai,
+    zoom: 11,);
+
   static const LatLng _center = const LatLng(19.0760, 72.8777);
   // Code added
   // Adding mapType
@@ -57,25 +69,48 @@ class _MyAppState extends State<MyApp> {
 		        alignment: Alignment.topRight,
 		        child: Column(
 		          children: <Widget>[
-		            FloatingActionButton(
-		              onPressed: _onMapTypeButtonPressed,
-		              materialTapTargetSize: MaterialTapTargetSize.padded,
-		              backgroundColor: Colors.cyan,
-		              child: const Icon(Icons.map, size: 36.0),
+		            SizedBox(
+		              width:48,
+		              height:48,
+		              child: FloatingActionButton(
+		                onPressed: _onMapTypeButtonPressed,
+		                materialTapTargetSize: MaterialTapTargetSize.padded,
+		                backgroundColor: Colors.cyan,
+		                child: const Icon(Icons.map, size: 24.0),
+		              ),
 		            ),
-		            SizedBox(height: 16.0),
-                    FloatingActionButton(
-                      onPressed: _onAddMarkerButtonPressed,
-                      materialTapTargetSize: MaterialTapTargetSize.padded,
-                      backgroundColor: Colors.cyan,
-                      child: const Icon(Icons.add_location, size: 36.0),
+		            SizedBox(height: 5.0),
+                    SizedBox(
+                      width:48,
+                      height:48,
+                      child: FloatingActionButton(
+                        onPressed: _onAddMarkerButtonPressed,
+                        materialTapTargetSize: MaterialTapTargetSize.padded,
+                        backgroundColor: Colors.cyan,
+                        child: const Icon(Icons.add_location, size: 24.0),
+                      ),
                     ),
-                    SizedBox(height: 16.0),
-                    FloatingActionButton(
-                      onPressed: _gotoGoogleHQ,
-                      materialTapTargetSize: MaterialTapTargetSize.padded,
-                      backgroundColor: Colors.cyan,
-                      child: const Icon(Icons.flight, size: 36.0),
+                    SizedBox(height: 5.0),
+                    SizedBox(
+                      width:48,
+                      height:48,
+                      child: FloatingActionButton(
+                        onPressed: _gotoGoogleHQ,
+                        materialTapTargetSize: MaterialTapTargetSize.padded,
+                        backgroundColor: Colors.cyan,
+                        child: const Icon(Icons.loyalty, size: 24.0),
+                      ),
+                    ),
+                    SizedBox(height: 5.0),
+                    SizedBox(
+                      width:48,
+                      height:48,
+                      child: FloatingActionButton(
+                        onPressed: _gotoPlace,
+                        materialTapTargetSize: MaterialTapTargetSize.padded,
+                        backgroundColor: Colors.cyan,
+                        child: const Icon(Icons.home, size: 24.0),
+                      ),
                     ),
 		          ], 
 		         ),
@@ -92,10 +127,7 @@ class _MyAppState extends State<MyApp> {
 	}
 
 	Future <void> _gotoGoogleHQ() async{
-	  // Googleplex
-	  LatLng _googleHQ = LatLng(37.4219999, -122.0862462);
-	  CameraPosition _camGHq = CameraPosition(
-      target: _googleHQ,);
+	  
 
 	  //Fly camera there
 	  final GoogleMapController controller = await _controller.future;
@@ -114,9 +146,12 @@ class _MyAppState extends State<MyApp> {
 	      icon: BitmapDescriptor.fromAsset('assets/images/g_placeholder.png',),
 	    ));
 	  });
+	}
 
+	Future <void> _gotoPlace() async{
 
-
+	final GoogleMapController controller = await _controller.future;
+	controller.animateCamera(CameraUpdate.newCameraPosition(_camMum));
 
 	}
 
